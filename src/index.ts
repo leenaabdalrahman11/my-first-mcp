@@ -4,6 +4,8 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { registerAddJobTool } from "./tools/add-job.js";
 import { registerListJobsTool } from "./tools/list_jobs.js";
 import { registerSearchJobsTool } from "./tools/search_jobs.js";
+import { registerAddInterviewTool } from "./tools/add-interview.js";
+import { registerInterviewPreparationTool } from "./tools/interview-preparation.js";
 
 const server = new McpServer({
   name: "my-first-mcp",
@@ -13,6 +15,8 @@ const server = new McpServer({
 registerAddJobTool(server);
 registerListJobsTool(server);
 registerSearchJobsTool(server);
+registerAddInterviewTool(server);
+registerInterviewPreparationTool(server);
 
 const transport = new StdioServerTransport();
 
