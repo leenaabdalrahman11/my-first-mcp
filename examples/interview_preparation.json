@@ -1,0 +1,13 @@
+{
+  "interviewId": "interview-001",
+  "topics": [
+    "Data Structures",
+    "Algorithms",
+    "System Design"
+  ],
+  "skills": [
+    "JavaScript",
+    "Problem Solving"
+  ],
+  "notes": "Practice technical questions before the interview."
+}
