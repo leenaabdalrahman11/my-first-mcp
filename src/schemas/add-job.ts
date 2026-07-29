@@ -1,5 +1,4 @@
-import { z } from "zod";
-
+import { z } from "zod/v4";
 /**
  * Tool: add_job
  * Adds a new job application.
