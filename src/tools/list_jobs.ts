@@ -17,8 +17,9 @@ export function registerListJobsTool(server: McpServer) {
             type: "text",
             text: JSON.stringify(
               {
-                jobs: [],
-                message: "List jobs tool stub",
+                ok: true,
+                stub: true,
+                tool: "list_jobs",
               },
               null,
               2
