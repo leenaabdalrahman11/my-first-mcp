@@ -1,0 +1,19 @@
+{
+  "nextId": 3,
+  "jobs": [
+    {
+      "id": 1,
+      "companyName": "Microsoft",
+      "jobTitle": "Software Engineer",
+      "applicationDate": "2026-07-20",
+      "status": "Interview"
+    },
+    {
+      "id": 2,
+      "companyName": "Amazon",
+      "jobTitle": "Backend Developer",
+      "applicationDate": "2026-07-25",
+      "status": "Applied"
+    }
+  ]
+}
