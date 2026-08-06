@@ -1,5 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { addJobInputSchema } from "../schemas/add-job.js";
+import { createJob } from "../lib/jobs.js";
+
 export function registerAddJobTool(server: McpServer) {
   server.registerTool(
     "add_job",
@@ -15,23 +17,54 @@ export function registerAddJobTool(server: McpServer) {
       applicationDate,
       status,
     }) => {
-      return {
-        content: [
-          {
-            type: "text",
-            text: JSON.stringify(
-              {
-                companyName,
-                jobTitle,
-                applicationDate,
-                status,
-              },
-              null,
-              2
-            ),
-          },
-        ],
-      };
+      try {
+        const job = await createJob({
+          companyName,
+          jobTitle,
+          applicationDate,
+          status,
+        });
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  ok: true,
+                  item: job,
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      } catch (error) {
+        const message =
+          error instanceof Error
+            ? error.message
+            : "Unknown error occurred";
+
+        console.error("[add_job]", message);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  ok: false,
+                  error: "Failed to add job application.",
+                  reason: message,
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
     }
   );
 }

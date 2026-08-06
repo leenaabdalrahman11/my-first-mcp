@@ -30,10 +30,10 @@ applicationDate: z
 
   status: z
     .enum([
-      "Applied",
+      "Applied"  ,
       "Interview",
-      "Offer",
-      "Rejected",
+      "Offer"    ,
+      "Rejected" ,
     ])
     .describe("Current application status."),
 });
