@@ -1,5 +1,5 @@
 {
-  "nextId": 3,
+  "nextId": 4,
   "jobs": [
     {
       "id": 1,
@@ -14,6 +14,13 @@
       "jobTitle": "Backend Developer",
       "applicationDate": "2026-07-25",
       "status": "Applied"
+    },
+    {
+      "id": 3,
+      "companyName": "GoogleGoogle",
+      "jobTitle": "Full Stack Developer",
+      "applicationDate": "2026-07-29",
+      "status": "Rejected"
     }
   ]
 }
