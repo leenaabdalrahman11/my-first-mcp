@@ -6,10 +6,10 @@ import { z } from "zod/v4";
  */
 export const updateJobStatusInputSchema = z.object({
   jobId: z
-    .string()
-    .trim()
-    .min(1, "Job ID is required.")
-    .max(100, "Job ID must not exceed 100 characters.")
+   
+.number()
+.int()
+.positive()
     .describe("Unique ID of the job application."),
 
   status: z

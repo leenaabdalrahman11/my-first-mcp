@@ -69,7 +69,7 @@ export function registerUpdateJobStatusTool(server: McpServer) {
                 {
                   ok: false,
                   error: "Failed to update job status.",
-                  reason: message,
+                 
                 },
                 null,
                 2
