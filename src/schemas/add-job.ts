@@ -5,14 +5,16 @@ import { z } from "zod/v4";
  */
 export const addJobInputSchema = z.object({
 companyName: z
-  .string()
-  .min(1)
-  .max(100)
+.string()
+.trim()
+.min(1)
+.max(100)
   .regex(/[a-zA-Z]/, "Company name must contain letters.")
   .describe("Name of the company."),
 
   jobTitle: z
     .string()
+    .trim()
     .min(1)
     .max(100)
     .regex(/[a-zA-Z]/, "Job title must contain letters.")

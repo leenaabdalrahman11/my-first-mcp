@@ -11,7 +11,7 @@ export function registerListJobsTool(server: McpServer) {
         "Retrieve all saved job applications with their current status. Use this tool when the user wants to view their job application history.",
       inputSchema: listJobsInputSchema,
     },
-    async () => {
+    async ({ limit = 50 }) => {
       try {
         const data = await loadJobs();
 
@@ -41,7 +41,10 @@ export function registerListJobsTool(server: McpServer) {
               text: JSON.stringify(
                 {
                   ok: true,
-                  items: data.jobs,
+                 items: data.jobs.slice(0, limit),
+total: data.jobs.length,
+returned: Math.min(data.jobs.length, limit),
+truncated: data.jobs.length > limit,
                 },
                 null,
                 2
@@ -65,7 +68,7 @@ export function registerListJobsTool(server: McpServer) {
                 {
                   ok: false,
                   error: "Failed to load job applications.",
-                  reason: message,
+                 
                 },
                 null,
                 2
