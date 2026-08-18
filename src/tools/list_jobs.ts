@@ -53,30 +53,29 @@ truncated: data.jobs.length > limit,
           ],
         };
       } catch (error) {
-        const message =
-          error instanceof Error
-            ? error.message
-            : "Unknown error occurred";
+  const message =
+    error instanceof Error
+      ? error.message
+      : "Unknown error occurred";
 
-        console.error("[list_jobs]", message);
+  console.error("[list_jobs]", message);
 
-        return {
-          content: [
-            {
-              type: "text",
-              text: JSON.stringify(
-                {
-                  ok: false,
-                  error: "Failed to load job applications.",
-                 
-                },
-                null,
-                2
-              ),
-            },
-          ],
-        };
-      }
+  return {
+    content: [
+      {
+        type: "text",
+        text: JSON.stringify(
+          {
+            ok: false,
+            error: message,
+          },
+          null,
+          2
+        ),
+      },
+    ],
+  };
+}
     }
   );
 }
