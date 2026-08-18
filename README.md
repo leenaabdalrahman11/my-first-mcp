@@ -133,6 +133,9 @@ Interview
 Offer
 Rejected
 
+You can find example MCP conversations here:
+
+[Example Conversations](examples/conversations.md)
 
 ## License
 
