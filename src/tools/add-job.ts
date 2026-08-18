@@ -56,7 +56,7 @@ export function registerAddJobTool(server: McpServer) {
                 {
                   ok: false,
                   error: "Failed to add job application.",
-                  reason: message,
+                 
                 },
                 null,
                 2

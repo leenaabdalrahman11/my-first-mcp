@@ -2,12 +2,11 @@ import * as path from "path";
 import { readFile, writeFile } from "fs/promises";
 import { jobsFileSchema } from "../schemas/jobSchema.js";
 
-const dataDir = path.resolve("data");
+const dataDir = path.resolve(process.cwd(), "data");
 const filePath = path.resolve(dataDir, "jobs.json");
 
 function validateFilePath() {
-  if (!filePath.startsWith(dataDir)) {
-    throw new Error("Invalid file path");
+if (!filePath.startsWith(dataDir + path.sep)) {    throw new Error("Invalid file path");
   }
 }
 
