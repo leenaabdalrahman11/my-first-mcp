@@ -1,5 +1,4 @@
-# Manual Test Plan – Job Application Tracker MCP
-
+Manual Test Plan – Job Application Tracker MCP
 | id | tool | setup | input | expected | result | evidence |
 
 | TC-01 | add_job | jobs.json reset to empty state | Valid job object from examples/add-job.json | Job is created successfully and saved with new id | PASS |![alt text](add-job-success.png) |
