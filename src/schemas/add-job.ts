@@ -25,11 +25,11 @@ applicationDate: z
   .min(10)
   .max(10)
   .regex(
-    /^\d{4}-\d{2}-\d{2}$/,
-    "Date must be in YYYY-MM-DD format."
+    /^\d{4}-(0[1-9]|1[0-2])-\d{2}$/,
+    "Date must be in YYYY-MM-DD format with a valid month."
   )
   .describe("Application date in YYYY-MM-DD format."),
-
+  
   status: z
     .enum([
       "Applied"  ,

@@ -1,8 +1,12 @@
 import * as path from "path";
+import { fileURLToPath } from "url";
 import { readFile, writeFile } from "fs/promises";
 import { jobsFileSchema } from "../schemas/jobSchema.js";
 
-const dataDir = path.resolve(process.cwd(), "data");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const dataDir = path.resolve(__dirname, "../../data");
 
 const filePath = path.resolve(dataDir, "jobs.json");
 const OPERATION_TIMEOUT_MS = 5000;
