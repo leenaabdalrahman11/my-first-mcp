@@ -1,6 +1,6 @@
 # My First MCP
 
-A simple MCP server built with TypeScript using the official Model Con```text Protocol SDK.
+A job application tracker MCP server built with TypeScript using the official Model Context Protocol SDK.
 
 ## What it does
 
@@ -52,13 +52,13 @@ npm run dev
 
 ## MCP Inspector
 
-To test the MCP server tools, run:
+From the project folder, run:
 
 ```bash
-npx @modelcon```textprotocol/inspector
+npx @modelcontextprotocol/inspector npx tsx src/index.ts
 ```
 
-Open MCP Inspector and connect it to the running server.
+Open the local URL printed in the terminal. Select the **Tools** tab, choose a tool, enter its required inputs, and click **Run Tool**.
 
 You can use the Inspector to test the available tools and check their responses.
 
