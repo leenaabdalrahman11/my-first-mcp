@@ -1,5 +1,5 @@
 {
-  "nextId": 4,
+  "nextId": 8,
   "jobs": [
     {
       "id": 1,
@@ -21,6 +21,34 @@
       "jobTitle": "Full Stack Developer",
       "applicationDate": "2026-07-29",
       "status": "Rejected"
+    },
+    {
+      "id": 4,
+      "companyName": "Google",
+      "jobTitle": "Developer",
+      "applicationDate": "2026-08-10",
+      "status": "Applied"
+    },
+    {
+      "id": 5,
+      "companyName": "Microsoft",
+      "jobTitle": "Software Engineer",
+      "applicationDate": "2026-08-18",
+      "status": "Applied"
+    },
+    {
+      "id": 6,
+      "companyName": "Apple",
+      "jobTitle": "iOS Developer",
+      "applicationDate": "2026-02-02",
+      "status": "Applied"
+    },
+    {
+      "id": 7,
+      "companyName": "Tesla",
+      "jobTitle": "Software Developer",
+      "applicationDate": "2026-02-02",
+      "status": "Applied"
     }
   ]
 }

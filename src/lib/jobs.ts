@@ -1,10 +1,27 @@
 import * as path from "path";
+import { fileURLToPath } from "url";
 import { readFile, writeFile } from "fs/promises";
 import { jobsFileSchema } from "../schemas/jobSchema.js";
 
-const dataDir = path.resolve(process.cwd(), "data");
-const filePath = path.resolve(dataDir, "jobs.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+const dataDir = path.resolve(__dirname, "../../data");
+
+const filePath = path.resolve(dataDir, "jobs.json");
+const OPERATION_TIMEOUT_MS = 5000;
+
+function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs = OPERATION_TIMEOUT_MS
+): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error("Operation timed out")), timeoutMs)
+    ),
+  ]);
+}
 function validateFilePath() {
 if (!filePath.startsWith(dataDir + path.sep)) {    throw new Error("Invalid file path");
   }
@@ -13,7 +30,9 @@ if (!filePath.startsWith(dataDir + path.sep)) {    throw new Error("Invalid file
 export async function loadJobs() {
   validateFilePath();
 
-  const fileContent = await readFile(filePath, "utf-8");
+const fileContent = await withTimeout(
+  readFile(filePath, "utf-8")
+);
 
   if (!fileContent.trim()) {
     return {
@@ -31,11 +50,13 @@ export async function loadJobs() {
 export async function saveJobs(data: unknown) {
   validateFilePath();
 
-  await writeFile(
+await withTimeout(
+  writeFile(
     filePath,
     JSON.stringify(data, null, 2),
     "utf-8"
-  );
+  )
+);
 }
 export async function createJob(job: {
   companyName: string;

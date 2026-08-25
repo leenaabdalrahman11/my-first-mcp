@@ -11,20 +11,20 @@ export function registerListJobsTool(server: McpServer) {
         "Retrieve all saved job applications with their current status. Use this tool when the user wants to view their job application history.",
       inputSchema: listJobsInputSchema,
     },
-    async ({ limit = 50 }) => {
+    async (input = {}) => {
       try {
-        const data = await loadJobs();
+        // Validate input manually
+        const parsed = listJobsInputSchema.safeParse(input);
 
-        if (data.jobs.length === 0) {
+        if (!parsed.success) {
           return {
             content: [
               {
                 type: "text",
                 text: JSON.stringify(
                   {
-                    ok: true,
-                    items: [],
-                    message: "No job applications found.",
+                    ok: false,
+                    error: parsed.error.issues[0]?.message,
                   },
                   null,
                   2
@@ -34,6 +34,50 @@ export function registerListJobsTool(server: McpServer) {
           };
         }
 
+        const { limit = 50 } = parsed.data;
+        if (limit > 50) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    ok: false,
+                    error: "limit exceeds maximum allowed value (50)",
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        const data = await loadJobs();
+
+        // Empty jobs.json case
+        if (data.jobs.length === 0) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    ok: true,
+                    items: [],
+                    total: 0,
+                    returned: 0,
+                    truncated: false,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Return jobs with limit
         return {
           content: [
             {
@@ -41,10 +85,10 @@ export function registerListJobsTool(server: McpServer) {
               text: JSON.stringify(
                 {
                   ok: true,
-                 items: data.jobs.slice(0, limit),
-total: data.jobs.length,
-returned: Math.min(data.jobs.length, limit),
-truncated: data.jobs.length > limit,
+                  items: data.jobs.slice(0, limit),
+                  total: data.jobs.length,
+                  returned: Math.min(data.jobs.length, limit),
+                  truncated: data.jobs.length > limit,
                 },
                 null,
                 2
@@ -67,8 +111,7 @@ truncated: data.jobs.length > limit,
               text: JSON.stringify(
                 {
                   ok: false,
-                  error: "Failed to load job applications.",
-                 
+                  error: message,
                 },
                 null,
                 2
