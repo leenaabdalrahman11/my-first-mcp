@@ -26,37 +26,37 @@ Before running the project, make sure you have:
 
 Clone the repository:
 
-bash
+```bash
 git clone https://github.com/leenaabdalrahman11/my-first-mcp.git
-
+```
 
 Go to the project folder:
 
-bash
+```bash
 cd my-first-mcp
-
+```
 
 Install dependencies:
 
-bash
+```bash
 npm install
-
+```
 
 ## Run
 
 Start the MCP server:
 
-bash
+```bash
 npm run dev
-
+```
 
 ## MCP Inspector
 
 To test the MCP server tools, run:
 
-bash
+```bash
 npx @modelcontextprotocol/inspector
-
+```
 
 Open MCP Inspector and connect it to the running server.
 
@@ -95,16 +95,16 @@ Update my Google application status to Interview.
 
 Make sure Node.js and npm are installed correctly:
 
-bash
+```bash
 node -v
 npm -v
-
+```
 
 Then install dependencies again:
 
-bash
+```bash
 npm install
-
+```
 
 ### 2. No job applications are displayed
 
@@ -140,6 +140,10 @@ You can find example MCP conversations here:
 ## License
 
 This project is licensed under the MIT License.
+
+## Academy Contact
+
+[Info@nextflows.ai](mailto:Info@nextflows.ai)
 
 ## Repository
 
