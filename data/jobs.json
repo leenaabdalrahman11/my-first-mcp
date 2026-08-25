@@ -1,5 +1,5 @@
 {
-  "nextId": 8,
+  "nextId": 9,
   "jobs": [
     {
       "id": 1,
@@ -27,7 +27,7 @@
       "companyName": "Google",
       "jobTitle": "Developer",
       "applicationDate": "2026-08-10",
-      "status": "Applied"
+      "status": "Interview"
     },
     {
       "id": 5,
@@ -48,6 +48,13 @@
       "companyName": "Tesla",
       "jobTitle": "Software Developer",
       "applicationDate": "2026-02-02",
+      "status": "Applied"
+    },
+    {
+      "id": 8,
+      "companyName": "Tesla",
+      "jobTitle": "Developer",
+      "applicationDate": "2026-08-09",
       "status": "Applied"
     }
   ]
