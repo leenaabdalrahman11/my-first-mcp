@@ -8,7 +8,8 @@ import { registerSearchJobsTool } from "./tools/search_jobs.js";
 import { registerAddInterviewTool } from "./tools/add-interview.js";
 import { registerInterviewPreparationTool } from "./tools/interview-preparation.js";
 import { registerGetJobTool } from "./tools/get_job.js";
-
+import { registerGreetTool } from "./tools/greet.js";
+import { registerIntroduceMeTool } from "./tools/introduce-me.js";
 const server = new McpServer({
   name: "my-first-mcp",
   version: "0.1.0",
@@ -21,6 +22,8 @@ registerAddInterviewTool(server);
 registerInterviewPreparationTool(server);
 registerUpdateJobStatusTool(server);
 registerGetJobTool(server);
+registerGreetTool(server);
+registerIntroduceMeTool(server);
 
 const transport = new StdioServerTransport();
 
