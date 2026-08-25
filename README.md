@@ -1,6 +1,6 @@
 # My First MCP
 
-A simple MCP server built with TypeScript using the official Model Context Protocol SDK.
+A simple MCP server built with TypeScript using the official Model Con```text Protocol SDK.
 
 ## What it does
 
@@ -55,7 +55,7 @@ npm run dev
 To test the MCP server tools, run:
 
 ```bash
-npx @modelcontextprotocol/inspector
+npx @modelcon```textprotocol/inspector
 ```
 
 Open MCP Inspector and connect it to the running server.
@@ -73,21 +73,21 @@ You can use the Inspector to test the available tools and check their responses.
 
 Add a new job application:
 
-text
+```text
 Add a job application for Microsoft as Software Engineer with status Applied.
-
+```
 
 View saved applications:
 
-text
+```text
 Show me all my job applications.
-
+```
 
 Update job status:
 
-text
+```text
 Update my Google application status to Interview.
-
+```
 
 ## Troubleshooting
 
@@ -110,9 +110,9 @@ npm install
 
 Make sure the data file exists:
 
-text
+```text
 data/jobs.json
-
+```
 
 Check that the file contains valid JSON data.
 
@@ -127,12 +127,12 @@ Make sure all required fields are provided:
 
 Allowed statuses:
 
-text
+```text
 Applied
 Interview
 Offer
 Rejected
-
+```
 You can find example MCP conversations here:
 
 [Example Conversations](examples/conversations.md)
