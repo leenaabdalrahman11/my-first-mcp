@@ -45,7 +45,7 @@
 **Affected tools:** `add_job` and `update_job_status`; the same pattern should be checked in the other tools.
 
 **Recommended fix:** Log the complete internal error on the server only. Return a small set of generic, pre-written error messages to the caller without exposing paths, stack traces, or implementation details.
-- Owner: Leena Abd Alrahman
+- Owner: Aseel Saleh
 - Due date: End of Week 4
 - Status: Completed
 - Commit: https://github.com/leenaabdalrahman11/my-first-mcp/commit/cf30ffa246d913da7e6f217406a8bbdbb3152b3f
