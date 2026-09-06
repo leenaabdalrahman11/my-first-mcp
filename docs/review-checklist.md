@@ -48,6 +48,8 @@
 - Owner: Leena Abd Alrahman
 - Due date: End of Week 4
 - Status: Completed
+- Commit: https://github.com/leenaabdalrahman11/my-first-mcp/commit/cf30ffa246d913da7e6f217406a8bbdbb3152b3f
+
 ### 2. Unlimited `list_jobs` Response
 
 **Issue:** `list_jobs` returns every item in `jobs.json` with no response-size limit.
@@ -59,6 +61,7 @@ maximum value for `limit`, and return pagination metadata where appropriate.
 - Owner: Leena Abd Alrahman
 - Due date: End of Week 4
 - Status: Completed
+- Commit: https://github.com/leenaabdalrahman11/my-first-mcp/commit/cf30ffa246d913da7e6f217406a8bbdbb3152b3f
 
 ### 3. Project Documentation Mismatch
 
@@ -71,6 +74,7 @@ and examples match the Job Application Tracker.
 - Owner: Leena Abd Alrahman
 - Due date: End of Week 4
 - Status: Completed
+- Commit: https://github.com/leenaabdalrahman11/my-first-mcp/commit/cf30ffa246d913da7e6f217406a8bbdbb3152b3f
 
 ### 4. Registered but Non-Functional Tools
 
@@ -91,6 +95,7 @@ document that decision.
 - Owner: Leena Abd Alrahman
 - Due date: End of Week 4
 - Status: Completed
+- Commit: https://github.com/leenaabdalrahman11/my-first-mcp/commit/cf30ffa246d913da7e6f217406a8bbdbb3152b3f
 
 ## Priority Before the Final Demo
 
