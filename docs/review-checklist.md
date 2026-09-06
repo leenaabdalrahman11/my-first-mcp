@@ -45,29 +45,52 @@
 **Affected tools:** `add_job` and `update_job_status`; the same pattern should be checked in the other tools.
 
 **Recommended fix:** Log the complete internal error on the server only. Return a small set of generic, pre-written error messages to the caller without exposing paths, stack traces, or implementation details.
-
+- Owner: Leena Abd Alrahman
+- Due date: End of Week 4
+- Status: Completed
 ### 2. Unlimited `list_jobs` Response
 
-**Issue:** `list_jobs` returns every item in `jobs.json` with no response-size limit. A large file could create oversized responses and performance problems. This matches Risk #3, “Runaway Responses,” in `threat-model.md`.
+**Issue:** `list_jobs` returns every item in `jobs.json` with no response-size limit.
+A large file could create oversized responses and performance problems.
 
-**Recommended fix:** Add optional `limit` and `offset` parameters, enforce a safe maximum value for `limit`, and return pagination metadata where appropriate.
+**Recommended fix:** Add optional `limit` and `offset` parameters, enforce a safe
+maximum value for `limit`, and return pagination metadata where appropriate.
+
+- Owner: Leena Abd Alrahman
+- Due date: End of Week 4
+- Status: Completed
 
 ### 3. Project Documentation Mismatch
 
-**Issue:** `project-choice.md` describes an Expense Tracker, while the implemented project is a Job Application Tracker.
+**Issue:** `project-choice.md` describes an Job Application Tracker, while the implemented
+project is a Job Application Tracker.
 
-**Recommended fix:** Update `project-choice.md` so the project name, purpose, scope, and examples match the Job Application Tracker.
+**Recommended fix:** Update `project-choice.md` so the project name, purpose, scope,
+and examples match the Job Application Tracker.
+
+- Owner: Leena Abd Alrahman
+- Due date: End of Week 4
+- Status: Completed
 
 ### 4. Registered but Non-Functional Tools
 
-**Issue:** Several additional tools are registered but currently behave like placeholders:
+**Issue:** Several additional tools are registered but currently behave like
+placeholders:
 
 - `get_job` returns the same hardcoded data regardless of `jobId`.
 - `search_jobs` always returns an empty list regardless of the query.
-- `add_interview` and `interview_preparation` do not persist data and return the same fixed ID.
-- `delete_job` is referenced in `design.md`, but its tool and schema files are empty and the tool is not registered.
+- `add_interview` and `interview_preparation` do not persist data and return the
+  same fixed ID.
+- `delete_job` is mentioned in `design.md`, but its files are empty and the tool
+  is not registered.
 
-**Recommended fix:** Implement and test these tools before the final demo. If they are outside the agreed scope, remove them from the registered tool list and clearly document that decision so placeholder behavior is not demonstrated as complete functionality.
+**Recommended fix:** Implement and test these tools before the final demo. If they
+are outside the agreed scope, remove them from the registered tool list and
+document that decision.
+
+- Owner: Leena Abd Alrahman
+- Due date: End of Week 4
+- Status: Completed
 
 ## Priority Before the Final Demo
 
